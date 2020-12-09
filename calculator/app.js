@@ -427,14 +427,14 @@
             
             if(isNaN(formula.substring(formula.length-1))){
                 //formulaの末尾が数字じゃないなら
-                $input.textContent += e.target.textContent+"(";
+                $input.textContent += e.target.textContent;
                 
             }else{
                 //logを入力したとき、formulaが初期値のままか否か
                 if(formula!="0"){
-                    $input.textContent += "x" + e.target.textContent+"(";
+                    $input.textContent += "x" + e.target.textContent;
                 }else{
-                    $input.textContent= e.target.textContent+"(";  //初期値のときはlogを上書きする.
+                    $input.textContent= e.target.textContent;  //初期値のときはlogを上書きする.
                 }                                               //ただし、formulaにはまだ書き換えない
             }
             log_flag= 1;    //logのフラグを立てる
