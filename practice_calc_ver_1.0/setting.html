@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+
+    <meta charset="utf-8">
+    <title>初期設定</title>
+    <meta name="description" content="最小数、最大数、挑戦したい問題数を設定">
+
+    <link rel ="stylesheet" href="css/setting.css">
+
+    <script type="text/javascript">
+
+        var _0x5a08=['&arith=','最小値の方を小さくしてください','practiceready','href','log','数字を入力してください','数字を入力しろな','./../second/index.html?','minus','&practice=','tto','practice_warn','textContent','arith','plus','min_warn','value','max','key_or_pad','getElementById','&min=','min','&input=','最大値の方を大きくしてください','form1','checked','practice','max_warn'];(function(_0x14f6ca,_0x481fef){var _0x5a08ea=function(_0x25ca8c){while(--_0x25ca8c){_0x14f6ca['push'](_0x14f6ca['shift']());}};_0x5a08ea(++_0x481fef);}(_0x5a08,0x132));var _0x25ca=function(_0x14f6ca,_0x481fef){_0x14f6ca=_0x14f6ca-0x123;var _0x5a08ea=_0x5a08[_0x14f6ca];return _0x5a08ea;};function send(){var _0x1fccb=_0x25ca;const _0x249306=document[_0x1fccb(0x138)](_0x1fccb(0x124)),_0x3ec0d5=document[_0x1fccb(0x138)](_0x1fccb(0x134)),_0x32265b=document[_0x1fccb(0x138)](_0x1fccb(0x130));var _0x5e54c0='',_0x1f31b7='',_0x2b1e1f='',_0x44b78e='',_0x15e1ce='';practice_param=document['form1'][_0x1fccb(0x123)][_0x1fccb(0x135)],max_param=document[_0x1fccb(0x13d)][_0x1fccb(0x136)][_0x1fccb(0x135)],min_param=document[_0x1fccb(0x13d)][_0x1fccb(0x13a)][_0x1fccb(0x135)];practice_param!=''?isNaN(practice_param)?_0x32265b[_0x1fccb(0x131)]=_0x1fccb(0x12b):(_0x2b1e1f=escape(practice_param),console[_0x1fccb(0x129)](_0x1fccb(0x127))):_0x2b1e1f=escape('10');max_param!=''&&min_param!=''?(isNaN(max_param)||isNaN(max_param)?(isNaN(max_param)&&(_0x249306['textContent']=_0x1fccb(0x12a)),isNaN(min_param)&&(_0x3ec0d5[_0x1fccb(0x131)]=_0x1fccb(0x12a))):Number(max_param)>Number(min_param)?(_0x5e54c0=escape(max_param),_0x1f31b7=escape(min_param)):(_0x249306[_0x1fccb(0x131)]=_0x1fccb(0x13c),_0x3ec0d5[_0x1fccb(0x131)]=_0x1fccb(0x126)),console['log'](_0x1fccb(0x12f))):(_0x5e54c0=escape('99'),_0x1f31b7=escape('1'));if(document[_0x1fccb(0x13d)][_0x1fccb(0x132)][0x0][_0x1fccb(0x13e)])_0x44b78e=escape(_0x1fccb(0x133));else{if(document[_0x1fccb(0x13d)]['arith'][0x1][_0x1fccb(0x13e)])_0x44b78e=escape(_0x1fccb(0x12d));else{if(document[_0x1fccb(0x13d)][_0x1fccb(0x132)][0x2]['checked'])_0x44b78e=escape('multiple');else document[_0x1fccb(0x13d)][_0x1fccb(0x132)][0x3][_0x1fccb(0x13e)]?_0x44b78e=escape('division'):_0x44b78e=escape(_0x1fccb(0x133));}}if(document[_0x1fccb(0x13d)][_0x1fccb(0x137)][0x0][_0x1fccb(0x13e)])_0x15e1ce=escape(document['form1'][_0x1fccb(0x137)][0x0][_0x1fccb(0x135)]);else document[_0x1fccb(0x13d)][_0x1fccb(0x137)][0x1][_0x1fccb(0x13e)]?_0x15e1ce=escape(document[_0x1fccb(0x13d)][_0x1fccb(0x137)][0x1]['value']):_0x15e1ce=escape(document['form1'][_0x1fccb(0x137)][0x1]['value']);if(_0x5e54c0!=''&&_0x1f31b7!=''&&_0x2b1e1f!=''){var _0x376f36='max='+_0x5e54c0+_0x1fccb(0x139)+_0x1f31b7+_0x1fccb(0x12e)+_0x2b1e1f+_0x1fccb(0x125)+_0x44b78e+_0x1fccb(0x13b)+_0x15e1ce;location[_0x1fccb(0x128)]+=_0x1fccb(0x12c)+_0x376f36;}return![];}
+        
+    </script>
+
+</head>
+<body>
+    
+
+
+    <div class="whole">
+        <!-- 送信フォーム開始 -->
+        <form action="#" method="get" name="form1" onsubmit="return send();">
+            <fieldset>
+                <legend>設定をしてください</legend>
+                <p>
+                    どの部門:
+                    <input type="radio" name="arith" value="＋">和
+                    <input type="radio" name="arith" value="ー">差
+                    <input type="radio" name="arith" value="x">積
+                    <input type="radio" name="arith" value="÷">商  
+                </p> 
+                <p>
+                    入力方法:
+                    <input type="radio" name="key_or_pad" value="key">キーボード
+                    <input type="radio" name="key_or_pad" value="pad">パッド入力
+                </p>      
+                <p>
+                    練習回数:<input type="text" name="practice" value="" size="6"> <span id="practice_warn"></span>
+                </p>
+                <p>
+                    最大値  :<input type="text" name="max" value="" size="6"> <span id="max_warn"></span>
+                </p>
+                <p>
+                    最小値  :<input type="text" name="min" value="" size= "6"> <span id="min_warn"></span>
+                </p>
+                
+                <p>
+                    <input type="submit" value="送信">
+                </p>
+            </fieldset>
+        </form>
+        <!-- 送信フォーム終了 -->
+    
+        <br>
+        <div class="description">
+            <fieldset>
+                <legend>説明</legend>
+                <p>練習回数、最大値、最小値はそれぞれ数字で入力してください。</p>
+                <p>なにも入力されなかった場合は以下のように、デフォルト値が</p>
+                <p>設定されます</p>
+                <br>
+                <p>デフォルト値：</p>
+                <p>・部門＝和</p>
+                <p>・入力方法＝パッド入力</p>
+                <p>・練習回数＝10</p>
+                <p>・最大値＝99</p>
+                <p>・最小値=1</p>
+    
+            </fieldset>
+        </div>
+    
+    
+    </div>
+    
+    
+
+</body>
+</html>

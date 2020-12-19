@@ -1,0 +1,161 @@
+.whole{
+    height: 100vw;
+    width: 100vw;
+    display:flex;
+}
+.flame{
+    width:65%;
+    height: 75%;
+    margin:0;
+    border: solid 1px black;
+    
+}
+.description{
+    width: 25%;
+    height: 80%;
+    margin-left: 2vw;
+}
+.description p{
+    font-size: 2vw;
+    white-space: nowrap;
+}
+
+.result_display{
+    width: 100%;
+    height: 20%;
+}
+
+.result_display .result{
+    width: 60%;
+    height: 90%;
+    border:solid 1px black;
+    margin: 0 auto;
+    font-size: 4vw;
+    line-height: 15vw;
+}
+.digit-window{
+    width:100%;
+    height:30%;
+    background-color: blue;
+}
+.formula{   
+    width: 100%;
+    height: 50%;
+    background-color:  #ddd;
+    
+}
+
+.formula_core{
+    
+    margin: auto;
+    width: 80%;
+    height:95%;
+    font-size: 3.375vw;
+    border:solid 1px black;
+    line-height: 10vw;
+    background-color: white;
+
+}
+.input_digit{
+    width: 100%;
+    height: 50%;
+    background-color: white;
+    font-size: 3.375vw;
+    text-align: right;
+}
+
+
+.pad{
+    width: 100%;
+    height: 40%;
+    
+}
+
+.pad ul{
+    width: 100%;
+    height: 20%;
+    color: white;
+
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display:flex;
+    
+}
+
+.pad ul li{
+    width: 100%;
+}
+.pad ul li .del{
+    color: white;
+    background-color: rgb(247, 53, 53); 
+    font-size: 3.25vw;
+    height: 100%; 
+    width: 100%;
+}
+
+.pad ul li .check{
+    color: white;
+    background-color: rgb(30, 196, 58);
+    font-size: 3.25vw;
+    height: 100%; 
+    width: 100%;
+}
+
+
+.pad1{
+    width:100%;
+    height: 40%
+}
+.pad2{
+    width: 100%;
+    height: 40%;
+}
+
+.number{
+    background-color:rgb(41, 133, 255);
+    width: 20%;
+    height: 100%;
+    color:white;
+    font-weight: bold;
+    font-size: 3.375vw;
+}
+
+.wrong{
+    background-color: rgb(255, 139, 158);
+    color: rgb(116, 0, 0);
+}
+.right{
+    background-color: greenyellow;
+    color: green;
+}
+
+.input_init{
+    background-color: white;
+    color: black;
+    display:inline-block;
+}
+
+.setting{
+    height: 10%;
+    width: 100%;
+    text-align:center;
+}
+
+.setting_button{
+    height: 100%;
+    width: 50%;
+    
+    text-align:center;
+    font-size: 3.375vw;
+    background-color: white;
+}
+
+
+
+.next_button_enable{
+    color: black;
+    background-color: white;
+}
+
