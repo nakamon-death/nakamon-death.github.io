@@ -10,10 +10,134 @@
 
     <link rel ="stylesheet" href="css/setting.css">
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        var _0x1edb=['数字を入力してください','textContent','max','最小値の方を小さくしてください','&min=','checked','division','&arith=','&practice=','href','plus','practiceready','form1','minus','min_warn','key_or_pad','./../second/index.html?','最大値の方を大きくしてください','multiple','getElementById','数字を入力しろな','practice','value','log','tto','arith','max_warn','max='];(function(_0x5a3974,_0x3995e0){var _0x1edbaa=function(_0x798b9b){while(--_0x798b9b){_0x5a3974['push'](_0x5a3974['shift']());}};_0x1edbaa(++_0x3995e0);}(_0x1edb,0x1bd));var _0x798b=function(_0x5a3974,_0x3995e0){_0x5a3974=_0x5a3974-0xfb;var _0x1edbaa=_0x1edb[_0x5a3974];return _0x1edbaa;};function send(){var _0x24b42c=_0x798b;const _0x2f1a5b=document[_0x24b42c(0x111)](_0x24b42c(0xfc)),_0xa25c38=document[_0x24b42c(0x111)](_0x24b42c(0x10c)),_0x52199f=document[_0x24b42c(0x111)]('practice_warn');var _0x4ec8be='',_0x457c0e='',_0x17a1a8='',_0x7ae99='',_0x518a88='';practice_param=document[_0x24b42c(0x10a)][_0x24b42c(0x113)][_0x24b42c(0x114)],max_param=document[_0x24b42c(0x10a)][_0x24b42c(0x100)][_0x24b42c(0x114)],min_param=document[_0x24b42c(0x10a)]['min'][_0x24b42c(0x114)];practice_param!=''?isNaN(practice_param)?_0x52199f[_0x24b42c(0xff)]=_0x24b42c(0x112):(_0x17a1a8=escape(practice_param),console[_0x24b42c(0x115)](_0x24b42c(0x109))):_0x17a1a8=escape('10');max_param!=''&&min_param!=''?(isNaN(max_param)||isNaN(max_param)?(isNaN(max_param)&&(_0x2f1a5b[_0x24b42c(0xff)]=_0x24b42c(0xfe)),isNaN(min_param)&&(_0xa25c38['textContent']=_0x24b42c(0xfe))):Number(max_param)>Number(min_param)?(_0x4ec8be=escape(max_param),_0x457c0e=escape(min_param)):(_0x2f1a5b['textContent']=_0x24b42c(0x10f),_0xa25c38[_0x24b42c(0xff)]=_0x24b42c(0x101)),console[_0x24b42c(0x115)](_0x24b42c(0x116))):(_0x4ec8be=escape('99'),_0x457c0e=escape('1'));if(document[_0x24b42c(0x10a)]['arith'][0x0][_0x24b42c(0x103)])_0x7ae99=escape('plus');else{if(document['form1'][_0x24b42c(0xfb)][0x1][_0x24b42c(0x103)])_0x7ae99=escape(_0x24b42c(0x10b));else{if(document['form1'][_0x24b42c(0xfb)][0x2][_0x24b42c(0x103)])_0x7ae99=escape(_0x24b42c(0x110));else document[_0x24b42c(0x10a)][_0x24b42c(0xfb)][0x3][_0x24b42c(0x103)]?_0x7ae99=escape(_0x24b42c(0x104)):_0x7ae99=escape(_0x24b42c(0x108));}}if(document[_0x24b42c(0x10a)][_0x24b42c(0x10d)][0x0][_0x24b42c(0x103)])_0x518a88=escape(document['form1'][_0x24b42c(0x10d)][0x0][_0x24b42c(0x114)]);else document[_0x24b42c(0x10a)][_0x24b42c(0x10d)][0x1][_0x24b42c(0x103)]?_0x518a88=escape(document[_0x24b42c(0x10a)][_0x24b42c(0x10d)][0x1][_0x24b42c(0x114)]):_0x518a88=escape(document[_0x24b42c(0x10a)]['key_or_pad'][0x1][_0x24b42c(0x114)]);if(_0x4ec8be!=''&&_0x457c0e!=''&&_0x17a1a8!=''){var _0x1bcb3d=_0x24b42c(0xfd)+_0x4ec8be+_0x24b42c(0x102)+_0x457c0e+_0x24b42c(0x106)+_0x17a1a8+_0x24b42c(0x105)+_0x7ae99+'&input='+_0x518a88;location[_0x24b42c(0x107)]+=_0x24b42c(0x10e)+_0x1bcb3d;}return![];}
-    </script>
+
+// パラメータを渡す側
+
+
+
+function send(){
+    const max_warn= document.getElementById('max_warn');
+    const min_warn= document.getElementById('min_warn');
+    const practice_warn= document.getElementById('practice_warn');
+    
+
+    var max="";
+    var min="";
+    var how_many_practice= "";
+    var arith= "";
+    var key_or_pad= "";
+
+    practice_param= document.form1.practice.value;
+    max_param= document.form1.max.value;
+    min_param= document.form1.min.value;
+
+
+
+    //練習回数を設定する
+    if(practice_param!= ""){
+        //practice_paramが空文字じゃなかったとき
+        if(isNaN(practice_param)){
+            //practice_paramが数字じゃなかったとき
+            practice_warn.textContent= "数字を入力しろな";
+        }else{
+            //practice_paramが数字の時
+            how_many_practice= escape(practice_param);
+
+            console.log("practiceready");
+    
+        }
+    }else{
+        //練習回数のデフォルト設定
+        how_many_practice= escape("10");
+    }
+    
+
+
+
+
+    //maxとminのパラメーターを設定する
+    if(max_param!="" && min_param!= ""){
+        //max_paramとmin_param両方が入力されているとき
+        
+        if(isNaN(max_param)|| isNaN(max_param)){ 
+            //どちらかあるいは両方とも数字じゃなかったとき
+            if(isNaN(max_param)){
+            //max_paramが数字じゃないとき
+            max_warn.textContent= "数字を入力してください"; 
+            }
+            if(isNaN(min_param)){
+            //min_paramが数字じゃないとき
+                min_warn.textContent= "数字を入力してください";
+            }             
+
+        }else{
+           //もし最大値最小値ともに数値なら
+        
+            //もし最大値の方が大きかったら
+            if(Number(max_param) > Number(min_param)){
+                max=escape(max_param);
+                min= escape(min_param);
+
+
+            }else{
+                //もし最小値の方が大きかったら
+                max_warn.textContent= "最大値の方を大きくしてください";
+                min_warn.textContent= "最小値の方を小さくしてください";
+            } 
+        }
+
+        console.log("tto");
+
+    }else{
+        //なにも入力されていない場合デフォルト設定でいく
+        max= escape("99");
+        min= escape("1");
+    }
+
+    
+    
+    //部門の処理
+    if(document.form1.arith[0].checked){
+        arith= escape("plus");
+    }else if(document.form1.arith[1].checked){
+        arith= escape("minus");
+    }else if(document.form1.arith[2].checked){
+        arith= escape("multiple");
+    }else if(document.form1.arith[3].checked){
+        arith= escape("division");
+    }else{
+        //なにもチェックが入っていない場合は足し算の部門に行く
+        arith= escape("plus");
+    }
+
+    //キーかパッドか
+    if(document.form1.key_or_pad[0].checked){
+        key_or_pad=escape(document.form1.key_or_pad[0].value)
+    }else if(document.form1.key_or_pad[1].checked){
+        key_or_pad=escape(document.form1.key_or_pad[1].value)
+    }else{
+        //デフォルトはpad入力
+        key_or_pad=escape(document.form1.key_or_pad[1].value)
+
+    }
+
+
+    if(max!= "" && min != "" && how_many_practice != ""){
+        var pram= "max="+ max + "&min=" + min + "&practice=" + how_many_practice+ "&arith="+ arith + "&input="+ key_or_pad;
+        // アドレスにパラメータを付加
+        location.href += "./../second/index.html?" + pram;
+        // location.href= "/Programming_Practice/website/practice_calc/test.html/./../?"+ pram;
+    }
+
+    
+    return false;
+
+}
+
+
+ </script>
 
 </head>
 <body>
