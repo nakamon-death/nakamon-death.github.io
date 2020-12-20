@@ -23,15 +23,18 @@
 .result_display{
     width: 100%;
     height: 20%;
+    background-color: #a6a6ff;
 }
 
 .result_display .result{
-    width: 60%;
+    width: 90%;
     height: 90%;
     border:solid 1px black;
     margin: 0 auto;
     font-size: 4vw;
     line-height: 15vw;
+    text-align:center;
+    background-color: white;
 }
 .digit-window{
     width:100%;
@@ -41,19 +44,20 @@
 .formula{   
     width: 100%;
     height: 50%;
-    background-color:  #ddd;
+    background-color: #a6a6ff;
     
 }
 
 .formula_core{
     
     margin: auto;
-    width: 80%;
+    width: 90%;
     height:95%;
     font-size: 3.375vw;
     border:solid 1px black;
     line-height: 10vw;
     background-color: white;
+    text-align: center;
 
 }
 .input_digit{
@@ -125,10 +129,12 @@
 .wrong{
     background-color: rgb(255, 139, 158);
     color: rgb(116, 0, 0);
+    text-align:left;
 }
 .right{
     background-color: greenyellow;
     color: green;
+    text-align: left;
 }
 
 .input_init{
