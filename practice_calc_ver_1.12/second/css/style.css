@@ -23,7 +23,7 @@
 .result_display{
     width: 100%;
     height: 20%;
-    background-color: #a6a6ff;
+    background-color: #eee;
 }
 
 .result_display .result{
@@ -34,7 +34,7 @@
     font-size: 4vw;
     line-height: 15vw;
     text-align:center;
-    background-color: white;
+    
 }
 .digit-window{
     width:100%;
@@ -127,9 +127,10 @@
 }
 
 .wrong{
-    background-color: rgb(255, 139, 158);
+    
     color: rgb(116, 0, 0);
     text-align:left;
+    background-color: rgb(255, 139, 158);
 }
 .right{
     background-color: greenyellow;
