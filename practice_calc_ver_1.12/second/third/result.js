@@ -1,1 +1,85 @@
-var _0x302c=['addEventListener','getElementById','max_and_min','https://nakamon-death.github.io/practice_calc_ver_1.12/','time','split','max','correct','substring','length','plus','minus','問正解','href','の部門','location','division','arith','click','textContent','search','correct_and_whole','min','persent','key','question','floor'];(function(_0x5c9349,_0x2f896f){var _0x302ce6=function(_0x280749){while(--_0x280749){_0x5c9349['push'](_0x5c9349['shift']());}};_0x302ce6(++_0x2f896f);}(_0x302c,0x1c0));var _0x2807=function(_0x5c9349,_0x2f896f){_0x5c9349=_0x5c9349-0x10f;var _0x302ce6=_0x302c[_0x5c9349];return _0x302ce6;};var _0x213f40=_0x2807;'use strict';const bumon=document['getElementById']('bumon'),correct_and_whole=document[_0x213f40(0x11b)](_0x213f40(0x114)),persent=document[_0x213f40(0x11b)](_0x213f40(0x116)),time=document['getElementById'](_0x213f40(0x11e)),max_and_min=document['getElementById'](_0x213f40(0x11c)),to_setting=document['getElementById']('to_setting');var queryString=window[_0x213f40(0x129)][_0x213f40(0x113)],queryObject=new Object();if(queryString){queryString=queryString[_0x213f40(0x122)](0x1);var parameters=queryString[_0x213f40(0x11f)]('&');for(var i=0x0;i<parameters[_0x213f40(0x123)];i++){var element=parameters[i][_0x213f40(0x11f)]('='),paramName=decodeURIComponent(element[0x0]),paramValue=decodeURIComponent(element[0x1]);queryObject[paramName]=paramValue;}}var arith=queryObject[_0x213f40(0x110)],question=queryObject[_0x213f40(0x118)],max=queryObject['max'],min=queryObject['min'],time_value=queryObject[_0x213f40(0x11e)],bumonText='',correct_and_whole_text='',persent_text='',max_and_min_text='',time_text='';if(arith===_0x213f40(0x124))bumonText+='和';else{if(arith===_0x213f40(0x125))bumonText+='差';else{if(arith==='multiple')bumonText+='積';else arith===_0x213f40(0x10f)&&(bumonText+='商');}}bumonText+=_0x213f40(0x128),correct_and_whole_text=queryObject[_0x213f40(0x118)]+'問中'+queryObject['correct']+_0x213f40(0x126),persent_text=String(Math[_0x213f40(0x119)](Number(queryObject[_0x213f40(0x121)])/Number(queryObject[_0x213f40(0x118)])*0x64))+'％',max_and_min_text=queryObject[_0x213f40(0x115)]+'~'+queryObject[_0x213f40(0x120)],time_text=time_value+'秒',bumon['textContent']=bumonText,correct_and_whole['textContent']=correct_and_whole_text,persent[_0x213f40(0x112)]=persent_text,max_and_min[_0x213f40(0x112)]=max_and_min_text,time[_0x213f40(0x112)]=time_text,console['log'](correct_and_whole_text),to_setting[_0x213f40(0x11a)](_0x213f40(0x111),()=>{var _0x176ae4=_0x213f40;location[_0x176ae4(0x127)]='https://nakamon-death.github.io/practice_calc_ver_1.12/';}),document[_0x213f40(0x11a)]('keyup',_0x1ff0a3=>{var _0x322ab0=_0x213f40;_0x1ff0a3[_0x322ab0(0x117)]==='Escape'&&(location[_0x322ab0(0x127)]=_0x322ab0(0x11d));});
+'use strict';
+
+
+const bumon = document.getElementById('bumon');
+const correct_and_whole= document.getElementById('correct_and_whole');
+const persent= document.getElementById('persent');
+const time = document.getElementById('time');
+const max_and_min= document.getElementById('max_and_min');
+const to_setting= document.getElementById("to_setting");
+
+
+
+
+//パラメータ取得
+var queryString= window.location.search;
+var queryObject= new Object();
+
+if(queryString){
+    queryString= queryString.substring(1);
+    var parameters= queryString.split('&');
+
+    for (var i = 0; i < parameters.length; i++){
+        var element = parameters[i].split('=');
+
+        var paramName= decodeURIComponent(element[0]);
+        var paramValue= decodeURIComponent(element[1]);
+        
+        queryObject[paramName]= paramValue;            
+    }
+}
+
+var arith= queryObject["arith"];
+var question= queryObject["question"];
+var max= queryObject["max"];
+var min= queryObject["min"];
+var time_value= queryObject["time"];
+
+
+var bumonText="";
+var correct_and_whole_text= "";
+var persent_text="";
+var max_and_min_text= "";
+var time_text="";
+
+if(arith==="plus"){
+    bumonText+= "和";
+}else if(arith==="minus"){
+    bumonText+= "差";
+}else if(arith==="multiple"){
+    bumonText+= "積";
+}else if(arith==="division"){
+    bumonText+= "商";
+}
+bumonText+= "の部門";
+
+
+correct_and_whole_text= queryObject["question"] + "問中"　+ queryObject["correct"]+ "問正解";
+
+persent_text= String(Math.floor(Number(queryObject["correct"])/ Number(queryObject["question"])*100)) + "％"
+
+max_and_min_text = queryObject["min"] + "~" + queryObject["max"];
+
+time_text= time_value + "秒";
+
+
+
+bumon.textContent = bumonText;
+correct_and_whole.textContent= correct_and_whole_text;
+persent.textContent= persent_text;
+
+max_and_min.textContent= max_and_min_text;
+time.textContent= time_text;
+
+console.log(correct_and_whole_text);
+
+to_setting.addEventListener('click', ()=>{
+    location.href= 'https://nakamon-death.github.io/practice_calc_ver_1.12/';
+});
+
+document.addEventListener('keyup', (event)=>{
+    if(event.key==="Escape"){
+        location.href= 'https://nakamon-death.github.io/practice_calc_ver_1.12/';
+
+    }
+})

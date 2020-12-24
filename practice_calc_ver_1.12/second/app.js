@@ -1,2 +1,368 @@
+'use strict'
 
-var _0x57ad=['正解です！','min','plus','keyup','input','contains','max','不正解:答えは','minus','check_and_next','結果ページを表示します','createElement','textContent','Check','floor','add','onclick','right','next_button_enable','pad','dblclick','toFixed','match','Backspace','location','result','del','&correct=','wrong','click','key','&arith=','&time=','return(','getElementById','indexOf','classList','remove','number','substring','split','href','input_digit','button','addEventListener','Delete','random','Enter','arith','log','now','length','pad1','search','alert','&min=','multiple','https://nakamon-death.github.io/practice_calc_ver_1.12/','setting_button','replace','division','target'];(function(_0x2a2cb3,_0x4d19fc){var _0x57adc5=function(_0x35ac74){while(--_0x35ac74){_0x2a2cb3['push'](_0x2a2cb3['shift']());}};_0x57adc5(++_0x4d19fc);}(_0x57ad,0xff));var _0x35ac=function(_0x2a2cb3,_0x4d19fc){_0x2a2cb3=_0x2a2cb3-0x16a;var _0x57adc5=_0x57ad[_0x2a2cb3];return _0x57adc5;};var _0x4b644a=_0x35ac;'use strict';var queryString=window[_0x4b644a(0x17b)][_0x4b644a(0x198)],queryObject=new Object();if(queryString){queryString=queryString[_0x4b644a(0x18a)](0x1);var parameters=queryString[_0x4b644a(0x18b)]('&');for(var i=0x0;i<parameters['length'];i++){var element=parameters[i][_0x4b644a(0x18b)]('='),paramName=decodeURIComponent(element[0x0]),paramValue=decodeURIComponent(element[0x1]);queryObject[paramName]=paramValue;}}const display_formula=document['getElementById']('formula_core'),input_digit=document[_0x4b644a(0x185)](_0x4b644a(0x18d)),del=document[_0x4b644a(0x185)](_0x4b644a(0x17d)),check=document[_0x4b644a(0x185)](_0x4b644a(0x16c)),setting=document[_0x4b644a(0x185)](_0x4b644a(0x19d)),result_display=document[_0x4b644a(0x185)](_0x4b644a(0x17c));var next_key_enable_flag=0x0,start_time=performance['now'](),key_or_pad=queryObject[_0x4b644a(0x1a5)],hope_figures=0x3,arith=queryObject[_0x4b644a(0x193)],arithmetic_operator='';const question_number=Number(queryObject['practice']),max=Number(queryObject[_0x4b644a(0x1a7)]),min=Number(queryObject[_0x4b644a(0x1a2)]);let question_init=0x0;var answer=0x0,formula='',digit='0',correct=0x0;input_digit[_0x4b644a(0x16f)]=digit;if(arith===_0x4b644a(0x1a3))arithmetic_operator='＋';else{if(arith===_0x4b644a(0x16b))arithmetic_operator='ー';else{if(arith===_0x4b644a(0x19b))arithmetic_operator='x';else arith===_0x4b644a(0x19f)&&(arithmetic_operator='÷');}}const del_button=()=>{var _0x47ccb8=_0x4b644a;console[_0x47ccb8(0x194)](digit[_0x47ccb8(0x196)]),digit!='0'&&(digit[_0x47ccb8(0x196)]!=0x1?digit=digit['slice'](0x0,-0x1):digit='0',input_digit[_0x47ccb8(0x16f)]=digit);},all_del_button=()=>{var _0x345ec=_0x4b644a;digit='0',input_digit[_0x345ec(0x16f)]=digit;};function check_button(){var _0x96d18d=_0x4b644a;next_key_enable_flag=0x1,Number(digit)===answer?(result_display['textContent']=_0x96d18d(0x1a1),result_display[_0x96d18d(0x187)]['add'](_0x96d18d(0x174)),correct++):(result_display[_0x96d18d(0x16f)]=_0x96d18d(0x16a)+String(answer),result_display[_0x96d18d(0x187)][_0x96d18d(0x172)](_0x96d18d(0x17f))),key_or_pad===_0x96d18d(0x176)&&(check[_0x96d18d(0x173)]=next_button),check[_0x96d18d(0x187)][_0x96d18d(0x172)](_0x96d18d(0x175)),check[_0x96d18d(0x16f)]='Next';};function next_button(){var _0x301bf1=_0x4b644a;question_init++;if(question_number>question_init){answer=0x0,formula='',digit='0',input_digit['textContent']=digit;if(result_display[_0x301bf1(0x187)]['contains'](_0x301bf1(0x174)))result_display[_0x301bf1(0x187)][_0x301bf1(0x188)]('right');else result_display['classList'][_0x301bf1(0x1a6)](_0x301bf1(0x17f))&&result_display[_0x301bf1(0x187)]['remove'](_0x301bf1(0x17f));result_display[_0x301bf1(0x16f)]=String(question_init+0x1)+'/'+String(question_number)+'問',next_key_enable_flag=0x0,key_or_pad==='pad'&&(check['onclick']=check_button),check['textContent']=_0x301bf1(0x170),make_and_output_formula();}else window[_0x301bf1(0x199)](_0x301bf1(0x16d)),to_result_page();};const suji_nyuryoku=_0x1e5ae0=>{var _0x3e2d50=_0x4b644a;digit==='0'?digit=_0x1e5ae0[_0x3e2d50(0x1a0)][_0x3e2d50(0x16f)]:digit+=_0x1e5ae0[_0x3e2d50(0x1a0)][_0x3e2d50(0x16f)],input_digit['textContent']=digit;},suji_nyuryoku_key=_0x55d8c0=>{var _0x4e23b8=_0x4b644a;digit==='0'?digit=_0x55d8c0:digit+=_0x55d8c0,input_digit[_0x4e23b8(0x16f)]=digit;},setting_button=()=>{var _0xec0bab=_0x4b644a;question_init=0x0,answer=0x0,formula='',digit='0',correct=0x0,input_digit['textContent']=digit,location[_0xec0bab(0x18c)]=_0xec0bab(0x19c);},make_and_output_formula=()=>{var _0x285a98=_0x4b644a;key_or_pad===_0x285a98(0x176)&&(check['onclick']=check_button);var _0x59f6be=Math[_0x285a98(0x171)](Math['random']()*max+min),_0xdf7f78=Math[_0x285a98(0x171)](Math[_0x285a98(0x191)]()*max+min);if(arithmetic_operator==='÷')while(_0x59f6be%_0xdf7f78!=0x0||_0x59f6be===_0xdf7f78||_0xdf7f78===0x1){_0x59f6be=Math[_0x285a98(0x171)](Math['random']()*max+min),_0xdf7f78=Math[_0x285a98(0x171)](Math[_0x285a98(0x191)]()*max+min);}else{if(arithmetic_operator==='ー')while(_0x59f6be<_0xdf7f78){_0x59f6be=Math[_0x285a98(0x171)](Math[_0x285a98(0x191)]()*max+min),_0xdf7f78=Math['floor'](Math[_0x285a98(0x191)]()*max+min);}}formula+=String(_0x59f6be),formula+=arithmetic_operator,formula+=String(_0xdf7f78),display_formula[_0x285a98(0x16f)]=formula;while(formula[_0x285a98(0x186)]('÷')!=-0x1){formula=formula['replace']('÷','/');}while(formula['indexOf']('＋')!=-0x1){formula=formula[_0x285a98(0x19e)]('＋','+');}while(formula[_0x285a98(0x186)]('ー')!=-0x1){formula=formula[_0x285a98(0x19e)]('ー','-');}while(formula[_0x285a98(0x186)]('x')!=-0x1){formula=formula[_0x285a98(0x19e)]('x','*');}answer=Function(_0x285a98(0x184)+formula+');')();},to_result_page=()=>{var _0x35e2b5=_0x4b644a,_0x5d7e0d=performance[_0x35e2b5(0x195)](),_0x476a03=((_0x5d7e0d-start_time)/0x3e8)[_0x35e2b5(0x178)](0x2),_0xd5857d=escape(question_number),_0x176be6=escape(arith),_0x2ddcb4=escape(max),_0x1932e2=escape(min),_0x1ecfef=escape(correct),_0x4ffc01=escape(_0x476a03),_0x24c0f8='question='+_0xd5857d+_0x35e2b5(0x182)+_0x176be6+'&max='+_0x2ddcb4+_0x35e2b5(0x19a)+_0x1932e2+_0x35e2b5(0x17e)+correct+_0x35e2b5(0x183)+_0x4ffc01;location[_0x35e2b5(0x18c)]='https://nakamon-death.github.io/practice_calc_ver_1.12/second/third/result.html?'+_0x24c0f8;};result_display[_0x4b644a(0x16f)]=String(question_init+0x1)+'/'+String(question_number)+'問',make_and_output_formula();key_or_pad===_0x4b644a(0x176)&&(del[_0x4b644a(0x18f)](_0x4b644a(0x180),()=>{del_button();}),del['addEventListener'](_0x4b644a(0x177),()=>{all_del_button();}),setting[_0x4b644a(0x18f)](_0x4b644a(0x180),()=>{setting_button();}));for(let i=0x0;i<0xa;i++){const button_num=document[_0x4b644a(0x16e)](_0x4b644a(0x18e));button_num[_0x4b644a(0x16f)]=String(i),button_num[_0x4b644a(0x187)][_0x4b644a(0x172)](_0x4b644a(0x189)),i<0x5?document[_0x4b644a(0x185)](_0x4b644a(0x197))['appendChild'](button_num):document['getElementById']('pad2')['appendChild'](button_num),key_or_pad===_0x4b644a(0x176)&&button_num[_0x4b644a(0x18f)](_0x4b644a(0x180),_0x26f81c=>{next_key_enable_flag===0x0&&suji_nyuryoku(_0x26f81c);});}key_or_pad===_0x4b644a(0x181)&&document[_0x4b644a(0x18f)](_0x4b644a(0x1a4),_0x248921=>{var _0x3f5094=_0x4b644a,_0xa3a972=_0x248921['key'];if(_0xa3a972[_0x3f5094(0x179)](/[0-9]/)!=null)next_key_enable_flag===0x0&&suji_nyuryoku_key(_0xa3a972);else{if(_0xa3a972===_0x3f5094(0x17a))del_button();else{if(_0xa3a972===_0x3f5094(0x190))all_del_button();else{if(_0xa3a972==='Escape')setting_button();else _0xa3a972===_0x3f5094(0x192)&&(next_key_enable_flag===0x0?(next_key_enable_flag=0x1,check_button()):(next_key_enable_flag=0x0,next_button()));}}}});
+//本プログラムは296行目から実行部分です。　それまでは関数や変数
+
+//ここからはURLからパラメータを取り出す処理です
+var queryString= window.location.search;
+var queryObject= new Object();
+
+
+if(queryString){
+    queryString= queryString.substring(1);
+    var parameters= queryString.split('&');
+
+    for (var i = 0; i < parameters.length; i++){
+        var element = parameters[i].split('=');
+
+        var paramName= decodeURIComponent(element[0]);
+        var paramValue= decodeURIComponent(element[1]);
+        
+        queryObject[paramName]= paramValue;            
+    }
+}
+
+//ここまでがURLからパラメータを取り出す処理です
+
+
+const display_formula= document.getElementById('formula_core');   //数式を表示する場所
+const input_digit= document.getElementById('input_digit');        //答えを入力する場所
+const del= document.getElementById('del');                         //一文字消す場所
+const check= document.getElementById('check_and_next'); 
+const setting= document.getElementById('setting_button');   //セッティングボタン
+const result_display= document.getElementById('result');
+
+
+var next_key_enable_flag= 0;   //ネクストボタンが有効か無効かを表すフラグ
+
+//時間を計測するための変数
+var start_time = performance.now();
+
+
+//キー入力かパッド入力かを分ける
+var key_or_pad=queryObject["input"];
+
+var hope_figures= 3;        //ユーザーの希望桁数
+var arith= queryObject["arith"];
+var arithmetic_operator= "";       //算術演算子
+
+
+
+//初期化処理
+const question_number=Number(queryObject["practice"]);       //問題数
+const max= Number(queryObject["max"]);                   //取り扱う最大の数字
+const min= Number(queryObject["min"]);                   //取り扱う最小の数字
+
+let question_init= 0;       //問題のカウント用の変数
+
+var answer= 0;               //答えを初期化しておく
+var formula= "";             //問題を初期化
+var digit= '0';
+var correct= 0;              //正解数を格納する変数
+input_digit.textContent= digit;
+
+//ここまで初期化処理
+
+//plusなどの文字になっているarith変数を人間にとって分かりやすい算術演算子に変える
+if(arith==="plus"){
+    arithmetic_operator="＋";
+}else if(arith==="minus"){
+    arithmetic_operator= "ー";
+}else if(arith==="multiple"){
+    arithmetic_operator= "x";
+}else if(arith==="division"){
+    arithmetic_operator= "÷";
+}
+
+
+
+
+//delボタンを押したときの処理
+const del_button= () =>{
+    console.log(digit.length);
+    
+    if(digit!="0"){
+        
+        if(digit.length!= 1){
+            //digitが１文字じゃないときの処理       
+            digit= digit.slice(0, -1);         
+        }else{
+            //digitが１文字のときの処理
+            digit= "0";
+        }
+        input_digit.textContent= digit;   
+    }
+};
+
+const all_del_button= () =>{
+    digit= "0";
+    input_digit.textContent= digit;
+}
+
+//checkボタンを押したときの処理
+function check_button(){
+    
+    next_key_enable_flag=1;
+    if(Number(digit)===answer){
+        // input_digit.classList.add('right');
+        result_display.textContent="正解です！";
+        result_display.classList.add('right');
+        correct++;
+    }else{
+        result_display.textContent="不正解:答えは"+ String(answer);
+        result_display.classList.add('wrong');
+        // input_digit.classList.add('wrong');
+    }
+
+    //check_buttonをnext_buttonに入れ替える
+    if(key_or_pad==="pad"){
+        check.onclick= next_button;
+    }
+
+    
+    check.classList.add('next_button_enable');
+    check.textContent="Next";
+    
+};
+
+function next_button(){
+    question_init++;
+    if(question_number> question_init){
+        answer= 0;               //答えを初期化しておく
+        formula= "";             //問題を初期化
+        digit= '0';
+        input_digit.textContent= digit;
+
+        //resultの表示切替
+        if(result_display.classList.contains('right')){
+            result_display.classList.remove('right');
+        }else if(result_display.classList.contains('wrong')){
+            result_display.classList.remove('wrong');
+        }
+
+        result_display.textContent=String(question_init+1)+ "/"+ String(question_number)+ "問";
+        
+  
+        //nextからcheckへの入れ替え処理
+        next_key_enable_flag= 0;
+        if(key_or_pad==="pad"){
+            check.onclick= check_button;
+        }
+        check.textContent= "Check";
+        
+        make_and_output_formula();
+
+   
+    }else{
+        window.alert('結果ページを表示します');
+        to_result_page();
+    }
+
+
+};
+
+//numberパッドを入力したときの処理
+const suji_nyuryoku = (e) =>{
+    if(digit==='0'){
+        digit= e.target.textContent;
+    }else{
+        digit+= e.target.textContent;
+    }
+    input_digit.textContent= digit;  
+};
+
+const suji_nyuryoku_key = (number) =>{
+    if(digit==='0'){
+        digit= number;
+    }else{
+        digit+= number;
+    }
+
+    
+    input_digit.textContent= digit;  
+};
+
+// settingボタンを押したときの処理
+const setting_button = ()=>{
+    question_init= 0;       //問題のカウント用の変数
+
+    answer= 0;               //答えを初期化しておく
+    formula= "";             //問題を初期化
+    digit= '0';
+    correct= 0;             //正解数を初期化
+    input_digit.textContent= digit;
+    location.href= 'https://nakamon-death.github.io/practice_calc_ver_1.12/';
+};
+
+
+
+
+//数式をランダムに作って表示する
+const make_and_output_formula= ()=>{
+    
+    
+    //無効化したcheckボタンを次の問題が始まると有効化する
+    // check.addEventListener('click', {handleEvent: check_button()});
+    
+    //有効化していたnextボタンを次の問題が始まると無効化する
+
+    if(key_or_pad==="pad"){
+        check.onclick= check_button;
+    }
+    
+    
+    
+
+    //数式を作る
+    var number1= Math.floor(Math.random() * max + min);
+    var number2= Math.floor(Math.random() * max + min);
+
+    if(arithmetic_operator==="÷"){
+        //もしも算術演算子が商だった場合
+        while(number1% number2!=0 || number1===number2 || number2===1){
+            //number2でnumber1が割り切れるようなnumber1とnumber2になるまで更新を続ける
+            number1= Math.floor(Math.random() * max + min);
+            number2= Math.floor(Math.random() * max + min);
+        }
+    }else if(arithmetic_operator==="ー"){
+        //もしも算術演算子が差だった場合
+        while(number1< number2){
+            number1= Math.floor(Math.random() * max + min);
+            number2= Math.floor(Math.random() * max + min);
+        }
+    }
+
+    formula+= String(number1);
+    formula+= arithmetic_operator;
+    formula+= String(number2);
+
+
+    display_formula.textContent= formula;   //ユーザーに問題を出題する
+
+    //内部で計算のためにユーザーフレンドリーな算術演算子を
+    //コンピューターフレンドリーな記述に切り替える
+    while(formula.indexOf("÷")!= -1){
+        formula= formula.replace("÷", "/");
+    }
+    while(formula.indexOf("＋")!= -1){
+        formula= formula.replace("＋", "+");
+    }
+    while(formula.indexOf("ー")!= -1){
+        formula= formula.replace("ー", "-");
+    }
+    while(formula.indexOf("x")!= -1){
+        formula= formula.replace("x", "*");
+    }
+    
+    
+    answer= Function('return('+formula +');')();//文字列型のformulaをプログラム上で読み込める数式にして答えを得る   
+    
+};
+
+const to_result_page= () =>{
+    //時間計測をこの関数実行された時の終了する
+    var end_time= performance.now();
+
+    var calc_time= ((end_time - start_time) /1000).toFixed(2); //ミリ秒なので1/1000倍する
+
+    //Resultページへ行く
+    var question= escape(question_number);
+    var arith_param= escape(arith);
+    var max_param= escape(max);
+    var min_param= escape(min);
+    var correct_param= escape(correct);
+    var time_param= escape(calc_time);
+
+    var param= "question="+ question + "&arith=" + arith_param + "&max=" + max_param + "&min=" + min_param + "&correct="+ correct + "&time="+ time_param;
+    location.href= "https://nakamon-death.github.io/practice_calc_ver_1.12/second/third/result.html?" + param;
+
+    
+}
+
+
+
+
+
+//実行部分
+//問題数を表示
+result_display.textContent=String(question_init+1)+ "/"+ String(question_number)+ "問";
+
+make_and_output_formula();//一番最初の問題表示
+
+if(key_or_pad==="pad"){
+del.addEventListener('click', ()=>{
+    del_button();
+});
+
+del.addEventListener('dblclick', ()=>{
+    all_del_button();
+});
+
+setting.addEventListener('click', ()=>{
+    setting_button();
+});
+
+
+}
+
+
+
+
+
+
+//numberパッド表示
+for (let i= 0; i < 10; i++){
+    const button_num =document.createElement('button');
+    button_num.textContent= String(i);
+    button_num.classList.add('number');
+    if(i < 5){
+        document.getElementById('pad1').appendChild(button_num);
+    }else{
+        document.getElementById('pad2').appendChild(button_num);
+    }
+
+    //入力モードがパッドだったら
+    if(key_or_pad==="pad"){
+        button_num.addEventListener('click', (e)=>{
+            if(next_key_enable_flag===0){
+                suji_nyuryoku(e);
+            }
+        });   
+    }
+}
+
+if(key_or_pad==="key"){
+    document.addEventListener('keyup', (event)=>{
+        
+        var keyName= event.key;
+        
+        if (keyName.match(/[0-9]/)!= null) {
+            if(next_key_enable_flag===0){
+                suji_nyuryoku_key(keyName);
+            }
+        }else if(keyName==="Backspace"){
+            del_button();
+        }else if(keyName==="Delete"){
+            all_del_button();
+        }else if(keyName==="Escape"){
+            setting_button();
+        }else if(keyName==="Enter"){
+            if(next_key_enable_flag===0){
+                next_key_enable_flag=1;     
+                check_button();  
+                
+            }else{
+                next_key_enable_flag=0;
+                next_button();
+            }
+        }
+
+    });
+}
+
+
+
+
+
+
+
+
